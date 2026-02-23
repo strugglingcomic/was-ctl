@@ -1,0 +1,19 @@
+[project]
+name = "was-ctl"
+version = "0.1.0"
+description = "CLI tool for managing Willow Application Server (WAS)"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "httpx>=0.27",
+]
+
+[project.scripts]
+was-ctl = "was_ctl.cli:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/was_ctl"]
